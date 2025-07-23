@@ -1,0 +1,32 @@
+------------------------Python Notebooks---------------------------------------
+
+1. Python IDLE 3.7.8
+2. Anaconda Navigator
+3. Visual Studio Code
+4. PyCharm
+5. Google collab
+
+
+-------------------------Install Libraries------------------------------------------
+
+pip install pandas
+pip uninstall pandas
+-------------------------------Install Libraries based on version-------------------
+
+pip install imutils == 0.5.4
+
+------------------------------------------------------------------------------------
+
+import cv2
+import imutils
+
+-------------------------------Checking version-------------------------------------
+imutils.__version__
+cv2.__version__
+pandas.__version__
+
+------------------------------------------------------------------------------------
+
+
+
+
