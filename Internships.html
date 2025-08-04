@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suresh Reddy - Data Analytics Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            color: #fff;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            color: #f0f0f0;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .section {
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            color: #4a5568;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .internship-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .internship-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 15px;
+            padding: 30px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .internship-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .internship-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .internship-card p {
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border-radius: 15px;
+            padding: 30px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .project-card li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            opacity: 0.9;
+        }
+
+        .project-card li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(43, 38, 38, 0.3);
+        }
+
+        .project-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .practice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .practice-card {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 15px;
+            padding: 25px;
+            color: #4a5568;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .practice-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .practice-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #2d3748;
+        }
+
+        .practice-card p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        .GitHub-Link {
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .GitHub-Link:hover {
+            color: #ff6b6b;
+        }
+
+        .back-to-portfolio {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            z-index: 1000;
+        }
+
+        .back-to-portfolio:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .project-grid,
+            .internship-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#" class="back-to-portfolio">← Back to Portfolio</a>
+    
+    <div class="container">
+        <div class="header">
+            <h1>Suresh Reddy Munagala</h1>
+            <div class="contact-info">
+                <a href="mailto:sureshreddy7893@gmail.com" class="contact-item">📧 sureshreddy7893@gmail.com</a>
+                <a href="https://github.com/sureshreddy7893" class="contact-item">🔗 GitHub</a>
+                <a href="tel:7893202813" class="contact-item">📱 7893202813</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 Professional Internships</h2>
+            <div class="internship-grid">
+                <div class="internship-card">
+                    <h3>Data Analyst Internship</h3>
+                    <p><strong>Duration:</strong> June 2025 - Present</p>
+                    <p><strong>Focus:</strong> Advanced data analysis, dashboard development, and business intelligence</p>
+                    <p>Specialized in extracting actionable insights from complex datasets using statistical analysis and visualization techniques. Developed comprehensive dashboards for stakeholder decision-making.</p>
+                    <div class="skills-tags">
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Data Modeling</span>
+                        <span class="skill-tag">Statistical Analysis</span>
+                    </div>
+                </div>
+                
+                <div class="internship-card">
+                    <h3>Power BI Developer Internship</h3>
+                    <p><strong>Duration:</strong> May 2025 - Present</p>
+                    <p><strong>Focus:</strong> Advanced Power BI development, DAX programming, and interactive dashboard creation</p>
+                    <p>Mastered Power BI ecosystem including Power Query, DAX functions, and advanced visualization techniques. Created dynamic, interactive dashboards for real-time business monitoring.</p>
+                    <div class="skills-tags">
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">DAX</span>
+                        <span class="skill-tag">Power Query</span>
+                        <span class="skill-tag">Data Visualization</span>
+                    </div>
+                </div>
+                
+                <div class="internship-card">
+                    <h3>Advanced Excel Specialist</h3>
+                    <p><strong>Duration:</strong> April 2025 - Present</p>
+                    <p><strong>Focus:</strong> Advanced Excel functions, automation, and financial modeling</p>
+                    <p>Developed expertise in complex Excel formulas, pivot tables, macros, and VBA programming. Created automated reporting systems and financial models for business analysis.</p>
+                    <div class="skills-tags">
+                        <span class="skill-tag">Advanced Excel</span>
+                        <span class="skill-tag">VBA</span>
+                        <span class="skill-tag">Pivot Tables</span>
+                        <span class="skill-tag">Financial Modeling</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>💼 Featured Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>HR Analytics Dashboard</h3>
+                    <p><strong>Tools:</strong> Power BI, DAX, Excel, Data Modeling</p>
+                    <p><strong>Date:</strong> July 2025</p>
+                    <ul>
+                        <li>Analyzed attrition trends across 1,000+ employee records</li>
+                        <li>Built comprehensive Power BI dashboard with interactive visuals</li>
+                        <li>Identified high-risk departments and turnover patterns</li>
+                        <li>Delivered actionable insights for HR decision-making</li>
+                        <li>Applied advanced DAX functions for complex calculations</li>
+                    </ul>
+                    <a href="#" class="project-link">View on GitHub</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Airline Operations & Revenue Analysis</h3>
+                    <p><strong>Tools:</strong> Power BI, DAX, Power Query, Excel</p>
+                    <p><strong>Date:</strong> June 2025</p>
+                    <ul>
+                        <li>Designed multi-page interactive dashboard for airline data</li>
+                        <li>Created KPIs for revenue and passenger analytics</li>
+                        <li>Built star schema for optimized performance</li>
+                        <li>Developed dynamic metrics using advanced DAX</li>
+                        <li>Delivered data-driven recommendations</li>
+                    </ul>
+                    <a href="#" class="project-link">View on LinkedIn</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3>AI-Powered Resume Portfolio</h3>
+                    <p><strong>Tools:</strong> Claude AI, HTML, GitHub Pages</p>
+                    <p><strong>Date:</strong> July 2025</p>
+                    <ul>
+                        <li>Created professional web resume using AI assistance</li>
+                        <li>Structured responsive portfolio with modern design</li>
+                        <li>Implemented interactive elements for better UX</li>
+                        <li>Hosted on GitHub Pages for public accessibility</li>
+                        <li>Showcased technical skills and project portfolio</li>
+                    </ul>
+                    <a href="#" class="project-link">View Portfolio</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🚀 Practice & Skill Development</h2>
+            <div class="practice-grid">
+                <div class="practice-card">
+                    <h3>Data Analytics Works</h3>
+                    <p>1. Data_Cleaning_and_Automation</p>
+                    <p>2. Creating_Pivot_Table</p>
+                    <p>3. Dashboard & Charts</p>
+                    <p>4. Automation_using_VBA</p>
+                    <p>5. Statistical_Analysis</p>
+                    <p>6. Permutations & Combinations</p>
+                    <p>7. Population & Sampling</p>
+                    <p>8. Probability Distribution</p>
+                    <p>9. Hypothesis Testing</p>
+                    <p>10. Tableau</p>
+                    <p>11. Power BI</p>
+                    <p>12. Python Intro</p>
+                    <p>13. Basic Python programming</p>
+                    <p>14. Python numpy</p>
+                    <p>15. Python pandas</p>
+                    <p>16. Matplotlib</p>
+                    <p>17. Seaborn</p>
+                    <p>18. MySQL</p>
+                    <p>19. EvaluatingandDeploying_MLAlgorithm</p>
+                    <p><strong>Current Focus:</strong> Machine Learning Model Deployment</p>
+                    <a href="https://github.com/sureshreddy7893/My_Portfolio/tree/main/Data%20Analytics%20Practice" class="GitHub-Link" target="_blank">View on GitHub</a>
+                </div>
+                <div class="practice-card">
+                    <h3>Power BI Works</h3>
+                    <p>Creating innovative dashboard designs with advanced DAX calculations and custom visualizations. Experimenting with real-time data connections and automated reporting.</p>
+                    <p><strong>Current Focus:</strong> Microsoft PL-300 </p>
+                </div>
+                
+                <div class="practice-card">
+                    <h3>Python Works</h3>
+                    <p>Basic works on python</p>
+                    <p><strong>Current Focus:</strong> Advanced Python programming</p>
+                    <a href="https://github.com/sureshreddy7893/My_Portfolio/tree/main/Python%20Practice" class="GitHub-Link" target="_blank">View on GitHub</a>
+                </div>
+                
+                <div class="practice-card">
+                    <h3>Advance Excel Works</h3>
+                    <p>Developing advanced Excel solutions with VBA macros and complex formulas. Creating automated reporting systems and financial models for business scenarios.</p>
+                    <p><strong>Current Focus:</strong> VBA programming and advanced pivot techniques</p>
+                </div>
+                
+                <div class="practice-card">
+                    <h3>Machine learning Works</h3>
+                    <p>1. Energy_Monitoring_System</p>
+                    <p>2. Land_Price_Prediction</p>
+                    <p>3. Anomaly Detection</p>
+                    <a href="https://github.com/sureshreddy7893/My_Portfolio/tree/main/Data%20Analytics%20Practice" class="GitHub-Link" target="_blank">View on GitHub</a>
+                    <p><strong>Current Focus:</strong>Working on Various ML Algorithms</p>
+                </div>
+                
+                <div class="practice-card">
+                    <h3>Deep Learning Works</h3>
+                    <p></p>
+                    <p><strong>Current Focus:</strong> </p>
+                </div>
+
+                <div class="practice-card">
+                    <h3>Tableau Works</h3>
+                    <p>Created Sales Dashboard</p>
+                    <p><strong>Current Focus:</strong> Advanced Tableau techniques</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
